@@ -1,16 +1,17 @@
 FILES :=                              \
-    Collatz.html                      \
-    Collatz.log                       \
-    Collatz.py                        \
-    RunCollatz.in                     \
-    RunCollatz.out                    \
-    RunCollatz.py                     \
-    TestCollatz.out                   \
-    TestCollatz.py                    \
-    collatz-tests/soa322-RunCollatz.in   \
-    collatz-tests/soa322-RunCollatz.out  \
-    collatz-tests/soa322-TestCollatz.out \
-    collatz-tests/soa322-TestCollatz.py 
+    Netflix.html                      \
+    Netflix.log                       \
+    Netflix.py                        \
+    RunNetflix.in                     \
+    RunNetflix.out                    \
+    RunNetflix.py                     \
+    TestNetflix.out                   \
+    TestNetflix.py
+
+#    Netflix-tests/EID-RunNetflix.in   \
+#    Netflix-tests/EID-RunNetflix.out  \
+#    Netflix-tests/EID-TestNetflix.out \
+#    Netflix-tests/EID-TestNetflix.py  \
 
 ifeq ($(CI), true)
     COVERAGE := coverage
@@ -23,29 +24,29 @@ endif
 .pylintrc:
 	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
-collatz-tests:
-	git clone https://github.com/cs373-summer-2016/collatz-tests.git
+Netflix-tests:
+	git clone https://github.com/cs373-summer-2016/Netflix-tests.git
 
-Collatz.html: Collatz.py
-	pydoc3 -w Collatz
+Netflix.html: Netflix.py
+	pydoc3 -w Netflix
 
-Collatz.log:
-	git log > Collatz.log
+Netflix.log:
+	git log > Netflix.log
 
-RunCollatz.tmp: .pylintrc RunCollatz.in RunCollatz.out RunCollatz.py
-	-$(PYLINT) Collatz.py
-	-$(PYLINT) RunCollatz.py
-	./RunCollatz.py < RunCollatz.in > RunCollatz.tmp
-	diff RunCollatz.tmp RunCollatz.out
-	python3 -m cProfile RunCollatz.py < RunCollatz.in > RunCollatz.tmp
-	cat RunCollatz.tmp
+RunNetflix.tmp: .pylintrc RunNetflix.in RunNetflix.out RunNetflix.py
+	-$(PYLINT) Netflix.py
+	-$(PYLINT) RunNetflix.py
+	./RunNetflix.py < RunNetflix.in > RunNetflix.tmp
+	diff RunNetflix.tmp RunNetflix.out
+	python3 -m cProfile RunNetflix.py < RunNetflix.in > RunNetflix.tmp
+	cat RunNetflix.tmp
 
-TestCollatz.tmp: .pylintrc TestCollatz.py
-	-$(PYLINT) Collatz.py
-	-$(PYLINT) TestCollatz.py
-	$(COVERAGE) run    --branch TestCollatz.py >  TestCollatz.tmp 2>&1
-	$(COVERAGE) report -m                      >> TestCollatz.tmp
-	cat TestCollatz.tmp
+TestNetflix.tmp: .pylintrc TestNetflix.py
+	-$(PYLINT) Netflix.py
+	-$(PYLINT) TestNetflix.py
+	$(COVERAGE) run    --branch TestNetflix.py >  TestNetflix.tmp 2>&1
+	$(COVERAGE) report -m                      >> TestNetflix.tmp
+	cat TestNetflix.tmp
 
 check:
 	@not_found=0;                                 \
@@ -70,20 +71,20 @@ clean:
 	rm -f  .coverage
 	rm -f  .pylintrc
 	rm -f  *.pyc
-	rm -f  Collatz.html
-	rm -f  Collatz.log
-	rm -f  RunCollatz.tmp
-	rm -f  TestCollatz.tmp
+	rm -f  Netflix.html
+	rm -f  Netflix.log
+	rm -f  RunNetflix.tmp
+	rm -f  TestNetflix.tmp
 	rm -rf __pycache__
-	rm -rf collatz-tests
+	rm -rf Netflix-tests
 
 config:
 	git config -l
 
 format:
-	autopep8 -i Collatz.py
-	autopep8 -i RunCollatz.py
-	autopep8 -i TestCollatz.py
+	autopep8 -i Netflix.py
+	autopep8 -i RunNetflix.py
+	autopep8 -i TestNetflix.py
 
 status:
 	make clean
@@ -91,10 +92,5 @@ status:
 	git branch
 	git remote -v
 	git status
-	
-SphereCollatz.py: Collatz.py RunCollatz.py
-	cat Collatz.py RunCollatz.py > SphereCollatz.tmp
-	grep -v 'from Collatz import' SphereCollatz.tmp > SphereCollatz.py
-	rm SphereCollatz.tmp
 
-test: Collatz.html Collatz.log RunCollatz.tmp TestCollatz.tmp collatz-tests check
+test: Netflix.html Netflix.log RunNetflix.tmp TestNetflix.tmp Netflix-tests check
