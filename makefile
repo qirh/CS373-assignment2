@@ -25,7 +25,7 @@ endif
 	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
 Netflix-tests:
-	git clone https://github.com/cs373-summer-2016/Netflix-tests.git
+	git clone https://github.com/cs373-summer-2016/netflix-tests.git
 
 Netflix.html: Netflix.py
 	pydoc3 -w Netflix
