@@ -22,7 +22,7 @@ class TestNetflix (TestCase):
 
     def test_read_1(self):
         s = "1 10\n"
-        i = collatz_read(s)
+        i = netflix_read(s)
         self.assertEqual(s)
 
 # ----
