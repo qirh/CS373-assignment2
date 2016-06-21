@@ -14,4 +14,4 @@ from Netflix import netflix_read
 # ----
 
 if __name__ == "__main__":
-    netflix_read("test")
+    netflix_read("bis266-probeAns.p")
