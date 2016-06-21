@@ -7,7 +7,7 @@
 
 import sys
 
-from Netflix import netflix_read
+from Netflix import netflix_read, netflix_print
 
 # ----
 # main
@@ -15,3 +15,4 @@ from Netflix import netflix_read
 
 if __name__ == "__main__":
     netflix_read("bis266-probeAns.p")
+    netflix_print(sys.stdout, 4.1, False)
