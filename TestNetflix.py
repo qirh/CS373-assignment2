@@ -9,8 +9,9 @@
 from io import StringIO
 from unittest import main, TestCase
 
-from Netflix import netflix_read, cache_answers_location, netflix_load_cache, cache_answers_location
 
+from Netflix import netflix_read, netflix_print, netflix_load_cache, netflix_rmse
+from Netflix import cache_customer_avg_rating_location, cache_answers_location, cache_movie_avg_rating_location
 
 # -----------
 # TestNetflix
