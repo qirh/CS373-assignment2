@@ -57,7 +57,7 @@ def netflix_read(s):
 def netflix_print(w, n, flag):
 	""" #pragma: no cover
 	w a writer
-	s is a string
+	n is a number which is either the movie or customer id
 	flag is a boolean, true if movie id, false if customer id
 	"""
 	if(flag):
