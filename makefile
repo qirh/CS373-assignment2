@@ -8,10 +8,10 @@ FILES :=                              \
     TestNetflix.out                   \
     TestNetflix.py
 
-#    Netflix-tests/EID-RunNetflix.in   \
-#    Netflix-tests/EID-RunNetflix.out  \
-#    Netflix-tests/EID-TestNetflix.out \
-#    Netflix-tests/EID-TestNetflix.py  \
+#	 ..\netflix-tests/apt443-RunNetflix.in   \
+#    ..\netflix-tests/apt443-RunNetflix.out  \
+#    ..\netflix-tests/apt443-TestNetflix.out \
+#    ..\netflix-tests/apt443-TestNetflix.py  \
 
 ifeq ($(CI), true)
     COVERAGE := coverage
@@ -25,7 +25,7 @@ endif
 	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
 Netflix-tests:
-	git clone https://github.com/cs373-summer-2016/netflix-tests.git
+	../ git clone https://github.com/cs373-summer-2016/netflix-tests.git
 
 Netflix.html: Netflix.py
 	pydoc3 -w Netflix
@@ -93,4 +93,4 @@ status:
 	git remote -v
 	git status
 
-test: Netflix.html Netflix.log RunNetflix.tmp TestNetflix.tmp Netflix-tests check
+test: Netflix.html Netflix.log RunNetflix.tmp TestNetflix.tmp check

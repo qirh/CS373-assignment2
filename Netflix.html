@@ -17,15 +17,37 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
     
 <tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sys.html">sys</a><br>
-</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="datetime.html">datetime</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="pickle.html">pickle</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td></tr></table></td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#eeaa77">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-netflix_read"><strong>netflix_read</strong></a>(s)</dt></dl>
+<td width="100%"><dl><dt><a name="-netflix_actual"><strong>netflix_actual</strong></a>(movie_id, customer_id)</dt><dd><tt>#pragma:&nbsp;no&nbsp;cover</tt></dd></dl>
+ <dl><dt><a name="-netflix_load_cache"><strong>netflix_load_cache</strong></a>(cache_name)</dt><dd><tt>#pragma:&nbsp;no&nbsp;cover<br>
+return&nbsp;a&nbsp;dict&nbsp;that&nbsp;represents&nbsp;the&nbsp;cache</tt></dd></dl>
+ <dl><dt><a name="-netflix_predict"><strong>netflix_predict</strong></a>(movie_id, customer_id)</dt><dd><tt>#pragma:&nbsp;no&nbsp;cover</tt></dd></dl>
+ <dl><dt><a name="-netflix_print"><strong>netflix_print</strong></a>(writer, n)</dt><dd><tt>#pragma:&nbsp;no&nbsp;cover<br>
+w&nbsp;a&nbsp;writer<br>
+n&nbsp;is&nbsp;a&nbsp;number&nbsp;which&nbsp;is&nbsp;either&nbsp;the&nbsp;movie&nbsp;or&nbsp;customer&nbsp;id<br>
+prints&nbsp;n&nbsp;to&nbsp;w</tt></dd></dl>
+ <dl><dt><a name="-netflix_read"><strong>netflix_read</strong></a>(reader)</dt><dd><tt>#pragma:&nbsp;no&nbsp;cover<br>
+s&nbsp;is&nbsp;a&nbsp;string&nbsp;representing&nbsp;a&nbsp;line<br>
+reads&nbsp;s</tt></dd></dl>
+ <dl><dt><a name="-netflix_rmse"><strong>netflix_rmse</strong></a>(sum, num)</dt><dd><tt>#pragma:&nbsp;no&nbsp;cover<br>
+sum&nbsp;is&nbsp;a&nbsp;square&nbsp;root&nbsp;sum<br>
+num&nbsp;is&nbsp;the&nbsp;number&nbsp;of&nbsp;elements<br>
+calculates&nbsp;the&nbsp;root&nbsp;mean&nbsp;square&nbsp;error</tt></dd></dl>
+ <dl><dt><a name="-netflix_solve"><strong>netflix_solve</strong></a>(reader, writer)</dt><dd><tt>r&nbsp;a&nbsp;reader<br>
+w&nbsp;a&nbsp;writer</tt></dd></dl>
+ <dl><dt><a name="-sqrt"><strong>sqrt</strong></a>(...)</dt><dd><tt><a href="#-sqrt">sqrt</a>(x)<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;square&nbsp;root&nbsp;of&nbsp;x.</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -33,5 +55,19 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
     
 <tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><strong>__cache__</strong> = {1: 1}</td></tr></table>
+<td width="100%"><strong>MAX_CUSTOMER_ID</strong> = 2649429<br>
+<strong>MAX_MOVIE_DATE</strong> = datetime.date(2005, 12, 31)<br>
+<strong>MAX_MOVIE_ID</strong> = 17770<br>
+<strong>MAX_RATING_DATE</strong> = datetime.date(2005, 12, 31)<br>
+<strong>MIN_CUSTOMER_ID</strong> = 1<br>
+<strong>MIN_MOVIE_DATE</strong> = datetime.date(1890, 1, 1)<br>
+<strong>MIN_MOVIE_ID</strong> = 1<br>
+<strong>MIN_RATING_DATE</strong> = datetime.date(1998, 10, 1)<br>
+<strong>NUM_CUSTOMERS</strong> = 480189<br>
+<strong>cache_answers</strong> = {}<br>
+<strong>cache_answers_location</strong> = 'amm6364-answer.p'<br>
+<strong>cache_customer_avg</strong> = {}<br>
+<strong>cache_customer_avg_location</strong> = 'amm6364-averageCustomerRating.p'<br>
+<strong>cache_movie_avg</strong> = {}<br>
+<strong>cache_movie_avg_location</strong> = 'amm6364-averageMovieRating.p'</td></tr></table>
 </body></html>

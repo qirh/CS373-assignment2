@@ -10,8 +10,8 @@ from io import StringIO
 from unittest import main, TestCase
 
 
-from Netflix import netflix_read, netflix_print, netflix_load_cache, netflix_rmse
-from Netflix import cache_answers_location, cache_customer_avg_rating_location, cache_movie_avg_rating_location
+from Netflix import netflix_read, netflix_print, netflix_load_cache, netflix_rmse, rmse_numpy
+from Netflix import cache_answers_location, cache_customer_avg_location, cache_movie_avg_location
 
 # -----------
 # TestNetflix
@@ -83,6 +83,28 @@ class TestNetflix (TestCase):
 		w = StringIO()
 		netflix_print(w, 276578)
 		self.assertEqual(w.getvalue(), "276578\n")
+
+	# ----
+	# rmse
+	# ----
+	def test_rmse_1(self):
+		n1 = 3
+		n2 = 4
+		squ_diff = ((n1 - n2) ** 2)
+		result = netflix_rmse(squ_diff, 2)
+
+		print(str(squ_diff) + " -- " + str(result))
+
+		self.assertEqual(result, 2)
+
+	def test_rmse_2(self):
+		n1 = 3
+		n2 = 4
+		result = rmse_numpy(n1, n2)
+
+		print(str(result) + " -- " + str(result))
+
+		self.assertEqual(result, 2)
 
 """
 	def test_load_cache_1(self):

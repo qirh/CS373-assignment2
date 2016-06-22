@@ -1,3 +1,45 @@
+commit ee5ba9436e3284bb7155bb5b0a6700383835436d
+Author: almto3 <almto3@hotmail.com>
+Date:   Wed Jun 22 13:11:49 2016 -0500
+
+    added some tests
+
+commit 332a717dc621df9fc79685a5dfa230233c933f3e
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jun 21 19:11:06 2016 -0500
+
+    added tests for read
+
+commit e06b5ae5eefdf83d2b26c6d73e87cba259a701da
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jun 21 18:33:39 2016 -0500
+
+    git failure
+
+commit c4403bc0ab281ed4c2610bf927b8ffddd2204f68
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jun 21 18:16:24 2016 -0500
+
+    added test cases
+
+commit da700b8d0f73fd87890534566ff8d9dd119285f6
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jun 21 02:18:19 2016 -0500
+
+    try travis
+
+commit 304e5a9076fddcddfd54046a044b1e2b3f374366
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jun 20 11:10:08 2016 -0500
+
+    added .gitignore
+
+commit 9a7b71759cc5e14bb34903927044167586f4ec05
+Author: saleh alghusson <almto3@hotmail.com>
+Date:   Mon Jun 20 10:59:53 2016 -0500
+
+    fixed travis
+
 commit 16750245be96361479ae7fe4d651297e867a40e2
 Author: almto3 <almto3@hotmail.com>
 Date:   Mon Jun 20 10:46:03 2016 -0500
