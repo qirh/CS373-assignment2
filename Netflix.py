@@ -23,6 +23,8 @@ cache_movie_avg_rating = {}
 cache_movie_avg_rating_location = "amm6364-averageMovieRating.p"
 
 #constants defined by specs
+NUM_CUSTOMERS = 480189
+
 MIN_CUSTOMER_ID = 1
 MAX_CUSTOMER_ID = 2649429
 MIN_RATING_DATE = datetime.date(1998,10,1)
@@ -38,32 +40,45 @@ MAX_MOVIE_DATE = datetime.date(2005,12,31)
 # netflix_read
 # ------------
 
-def netflix_read(s):
+def netflix_read(reader):
 	""" #pragma: no cover
 	s is a string representing a line
 	if it's a movie id, returns true and the id
 	if it's a customer id, returns false and the id
 	"""
-	if ":" in s:
-		return True, s.split(":")[0]
-	else:
-		return False, s.rstrip()
-	netflix_set_cache (s)
+	return reader.readline().strip()
+
 
 # -------------
 # netflix_print
 # -------------
 
-def netflix_print(w, n, flag):
+def netflix_print(w, n):
 	""" #pragma: no cover
 	w a writer
 	n is a number which is either the movie or customer id
-	flag is a boolean, true if movie id, false if customer id
 	"""
-	if(flag):
-		w.write( str(n) + ":\n" )
-	else:
-		w.write( str(round(float(n),1)) + "\n")
+	w.write(str(n) + "\n")
+
+
+# --------------
+# netflix_actual
+# --------------
+
+def netflix_actual(movie_avg, customer_avg, customer_rmse):
+	""" #pragma: no cover
+	"""
+	return 0
+
+
+# ---------------
+# netflix_predict
+# ---------------
+
+def netflix_predict(movie_id, customer_id):
+	""" #pragma: no cover
+	"""
+	return 0
 
 # ------------------
 # netflix_load_cache
@@ -89,11 +104,26 @@ def netflix_load_cache(cache_name):
 	print (cache)
 	return cache
 
+# ------------
+# netflix_rmse
+# ------------
 def netflix_rmse(sum, num):
 	""" #pragma: no cover
 	sum is a square root sum
 	num is the number of elements
+	calculates the root mean square error
 	"""
 	return sqrt(mean(square(subtract(sum, num))))
+
+
+# -------------
+# netflix_solve
+# -------------
+def netflix_solve(reader, writer):
+	"""
+	r a reader
+	w a writer
+	"""
+
 
 
