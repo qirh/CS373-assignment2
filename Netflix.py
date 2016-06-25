@@ -96,13 +96,13 @@ def netflix_load_cache(cache_name):
     filepath = "/u/downing/public_html/netflix-caches/" + cache_name
 
     if os.path.isfile(filepath):
-        
+
         f = open(filepath, 'rb')
         cache = pickle.load(f)
         f.close()  # always remember to close the file
 
     else:
-        
+
         cache_url = "http://www.cs.utexas.edu/users/downing/netflix-caches/" + \
             cache_name
         cache_read_from_url = urlopen(cache_url).read()
@@ -148,7 +148,6 @@ def netflix_solve(reader, writer):
 
         line = netflix_read(reader)
 
-        
         if not line:
             netflix_print(
                 writer, "RMSE: " + str(netflix_rmse(squ_diff, count)))
