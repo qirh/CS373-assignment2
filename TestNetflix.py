@@ -103,7 +103,7 @@ class TestNetflix (TestCase):
 
         print(str(squ_diff) + " -- " + str(result))
 
-        self.assertEqual(result, 2)
+        self.assertEqual(result, 1.0)
 
     def test_rmse_2(self):
         n1 = 3
@@ -112,7 +112,7 @@ class TestNetflix (TestCase):
 
         print(str(result) + " -- " + str(result))
 
-        self.assertEqual(result, 2)
+        self.assertEqual(result, 1.0)
 
 """
 	def test_load_cache_1(self):
