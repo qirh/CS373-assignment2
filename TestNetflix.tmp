@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "TestNetflix.py", line 14, in <module>
-    from Netflix import cache_answers_location, cache_customer_avg_rating_location, cache_movie_avg_rating_location
-ImportError: cannot import name 'cache_customer_avg_rating_location'
