@@ -161,3 +161,4 @@ def netflix_solve(reader, writer):
 		else : #movie id
 			currentMovieID=line[:-1]
 			netflix_print(writer, line)
+
