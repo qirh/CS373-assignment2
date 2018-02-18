@@ -1,3 +1,5 @@
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -76,10 +78,13 @@ ENV/
 # Rope project settings
 .ropeproject
 
+primes.txt
+primes2.txt
 
-netflix-tests
+collatz-tests
 .DS_Store
-RunNetflix.tmp
-TestNetflix.tmp
+RunCollatz.tmp
+TestCollatz.tmp
 .coverage
 *.pyc
+__pycache__
